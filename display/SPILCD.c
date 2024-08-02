@@ -147,94 +147,257 @@ void SPILCD_init()
 	
 	LCD_2IN4_Reset();
 
-	LCD_2IN4_Write_Command(0x11); //Sleep out
+	LCD_2IN4_Write_Command(0xfd);
+	LCD_2IN4_WriteData_Byte(0x06);
+	LCD_2IN4_WriteData_Byte(0x08);
+
+	LCD_2IN4_Write_Command(0x61);
+	LCD_2IN4_WriteData_Byte(0x07);
+	LCD_2IN4_WriteData_Byte(0x04);
+
+	LCD_2IN4_Write_Command(0x62);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x44);
+	LCD_2IN4_WriteData_Byte(0x45);
+
+	LCD_2IN4_Write_Command(0x63);
+	LCD_2IN4_WriteData_Byte(0x41);
+	LCD_2IN4_WriteData_Byte(0x07);
+	LCD_2IN4_WriteData_Byte(0x12);
+	LCD_2IN4_WriteData_Byte(0x12);
+
+	LCD_2IN4_Write_Command(0x64);
+	LCD_2IN4_WriteData_Byte(0x37);
 	
-	LCD_2IN4_Write_Command(0xCF);
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_WriteData_Byte(0xC1);
-	LCD_2IN4_WriteData_Byte(0X30);
-	LCD_2IN4_Write_Command(0xED);
-	LCD_2IN4_WriteData_Byte(0x64);
-	LCD_2IN4_WriteData_Byte(0x03);
-	LCD_2IN4_WriteData_Byte(0X12);
-	LCD_2IN4_WriteData_Byte(0X81);
-	LCD_2IN4_Write_Command(0xE8);
-	LCD_2IN4_WriteData_Byte(0x85);
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_WriteData_Byte(0x79);
-	LCD_2IN4_Write_Command(0xCB);
-	LCD_2IN4_WriteData_Byte(0x39);
-	LCD_2IN4_WriteData_Byte(0x2C);
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_WriteData_Byte(0x34);
-	LCD_2IN4_WriteData_Byte(0x02);
-	LCD_2IN4_Write_Command(0xF7);
+	LCD_2IN4_Write_Command(0x65);
+	LCD_2IN4_WriteData_Byte(0x09);
+	LCD_2IN4_WriteData_Byte(0x10);
+	LCD_2IN4_WriteData_Byte(0x21);
+	
+	LCD_2IN4_Write_Command(0x66);
+	LCD_2IN4_WriteData_Byte(0x09);
+	LCD_2IN4_WriteData_Byte(0x10);
+	LCD_2IN4_WriteData_Byte(0x21);
+	
+	LCD_2IN4_Write_Command(0x67);
 	LCD_2IN4_WriteData_Byte(0x20);
-	LCD_2IN4_Write_Command(0xEA);
+	LCD_2IN4_WriteData_Byte(0x40);
+
+	
+	LCD_2IN4_Write_Command(0x68);
+	LCD_2IN4_WriteData_Byte(0x90);
+	LCD_2IN4_WriteData_Byte(0x4c);
+	LCD_2IN4_WriteData_Byte(0x7C);
+	LCD_2IN4_WriteData_Byte(0x66);
+
+	LCD_2IN4_Write_Command(0xb1);
+	LCD_2IN4_WriteData_Byte(0x0F);
+	LCD_2IN4_WriteData_Byte(0x02);
+	LCD_2IN4_WriteData_Byte(0x01);
+
+	LCD_2IN4_Write_Command(0xB4);
+	LCD_2IN4_WriteData_Byte(0x01);
+	
+	LCD_2IN4_Write_Command(0xB5);
+	LCD_2IN4_WriteData_Byte(0x02);
+	LCD_2IN4_WriteData_Byte(0x02);
+	LCD_2IN4_WriteData_Byte(0x0a);
+	LCD_2IN4_WriteData_Byte(0x14);
+
+	LCD_2IN4_Write_Command(0xB6);
+	LCD_2IN4_WriteData_Byte(0x04);
+	LCD_2IN4_WriteData_Byte(0x01);
+	LCD_2IN4_WriteData_Byte(0x9f);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x02);
+
+	LCD_2IN4_Write_Command(0xdf);
+	LCD_2IN4_WriteData_Byte(0x11);
+
+	LCD_2IN4_Write_Command(0xE2);
+	LCD_2IN4_WriteData_Byte(0x13);
 	LCD_2IN4_WriteData_Byte(0x00);
 	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_Write_Command(0xC0); //Power control
-	LCD_2IN4_WriteData_Byte(0x1D); //VRH[5:0]
-	LCD_2IN4_Write_Command(0xC1); //Power control
-	LCD_2IN4_WriteData_Byte(0x12); //SAP[2:0];BT[3:0]
-	LCD_2IN4_Write_Command(0xC5); //VCM control
+	LCD_2IN4_WriteData_Byte(0x30);
 	LCD_2IN4_WriteData_Byte(0x33);
-	LCD_2IN4_WriteData_Byte(0x3F);
-	LCD_2IN4_Write_Command(0xC7); //VCM control
-	LCD_2IN4_WriteData_Byte(0x92);
-	LCD_2IN4_Write_Command(0x3A); // Memory Access Control
-	LCD_2IN4_WriteData_Byte(0x55);
-	LCD_2IN4_Write_Command(0x36); // Memory Access Control
-	LCD_2IN4_WriteData_Byte(0b1011000); // 0x58
-	// SPILCD_setRotation(0);
-	// SPILCD_invertDisplay(0);
-	LCD_2IN4_Write_Command(0xB1);
+	LCD_2IN4_WriteData_Byte(0x3f);
+
+	LCD_2IN4_Write_Command(0xE5);
+	LCD_2IN4_WriteData_Byte(0x3f);
+	LCD_2IN4_WriteData_Byte(0x33);
+	LCD_2IN4_WriteData_Byte(0x30);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x13);
+
+	LCD_2IN4_Write_Command(0xE1);	
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x57);
+
+	LCD_2IN4_Write_Command(0xE4);
+	LCD_2IN4_WriteData_Byte(0x58);
+	LCD_2IN4_WriteData_Byte(0x00);
+
+	LCD_2IN4_Write_Command(0xE0);
+	LCD_2IN4_WriteData_Byte(0x01);
+	LCD_2IN4_WriteData_Byte(0x03);
+	LCD_2IN4_WriteData_Byte(0x0d);
+	LCD_2IN4_WriteData_Byte(0x0e);
+	LCD_2IN4_WriteData_Byte(0x0e);
+	LCD_2IN4_WriteData_Byte(0x0c);
+	LCD_2IN4_WriteData_Byte(0x15);
+	LCD_2IN4_WriteData_Byte(0x19);
+
+	LCD_2IN4_Write_Command(0xE3);
+	LCD_2IN4_WriteData_Byte(0x1a);
+	LCD_2IN4_WriteData_Byte(0x16);
+	LCD_2IN4_WriteData_Byte(0x0C);
+	LCD_2IN4_WriteData_Byte(0x0f);
+	LCD_2IN4_WriteData_Byte(0x0e);
+	LCD_2IN4_WriteData_Byte(0x0d);
+	LCD_2IN4_WriteData_Byte(0x02);
+	LCD_2IN4_WriteData_Byte(0x01);
+
+	LCD_2IN4_Write_Command(0xE6);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0xff);
+
+	LCD_2IN4_Write_Command(0xE7);
+	LCD_2IN4_WriteData_Byte(0x01);
+	LCD_2IN4_WriteData_Byte(0x04);
+	LCD_2IN4_WriteData_Byte(0x03);
+	LCD_2IN4_WriteData_Byte(0x03);
 	LCD_2IN4_WriteData_Byte(0x00);
 	LCD_2IN4_WriteData_Byte(0x12);
-	LCD_2IN4_Write_Command(0xB6); // Display Function Control
-	LCD_2IN4_WriteData_Byte(0x0A);
-	LCD_2IN4_WriteData_Byte(0xA2);
 
-	LCD_2IN4_Write_Command(0x44);
+	LCD_2IN4_Write_Command(0xE8);
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x70);
+	LCD_2IN4_WriteData_Byte(0x00);
+
+	LCD_2IN4_Write_Command(0xEc);
+	LCD_2IN4_WriteData_Byte(0x52);
+
+	LCD_2IN4_Write_Command(0xF1);
+	LCD_2IN4_WriteData_Byte(0x01);
+	LCD_2IN4_WriteData_Byte(0x01);
 	LCD_2IN4_WriteData_Byte(0x02);
 
-	LCD_2IN4_Write_Command(0xF2); // 3Gamma Function Disable
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_Write_Command(0x26); //Gamma curve selected
-	LCD_2IN4_WriteData_Byte(0x01);
-	LCD_2IN4_Write_Command(0xE0); //Set Gamma
-	LCD_2IN4_WriteData_Byte(0x0F);
-	LCD_2IN4_WriteData_Byte(0x22);
-	LCD_2IN4_WriteData_Byte(0x1C);
-	LCD_2IN4_WriteData_Byte(0x1B);
-	LCD_2IN4_WriteData_Byte(0x08);
-	LCD_2IN4_WriteData_Byte(0x0F);
-	LCD_2IN4_WriteData_Byte(0x48);
-	LCD_2IN4_WriteData_Byte(0xB8);
-	LCD_2IN4_WriteData_Byte(0x34);
-	LCD_2IN4_WriteData_Byte(0x05);
-	LCD_2IN4_WriteData_Byte(0x0C);
+
+	LCD_2IN4_Write_Command(0xF6);
 	LCD_2IN4_WriteData_Byte(0x09);
-	LCD_2IN4_WriteData_Byte(0x0F);
-	LCD_2IN4_WriteData_Byte(0x07);
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_Write_Command(0XE1); //Set Gamma
-	LCD_2IN4_WriteData_Byte(0x00);
-	LCD_2IN4_WriteData_Byte(0x23);
-	LCD_2IN4_WriteData_Byte(0x24);
-	LCD_2IN4_WriteData_Byte(0x07);
 	LCD_2IN4_WriteData_Byte(0x10);
-	LCD_2IN4_WriteData_Byte(0x07);
-	LCD_2IN4_WriteData_Byte(0x38);
-	LCD_2IN4_WriteData_Byte(0x47);
-	LCD_2IN4_WriteData_Byte(0x4B);
-	LCD_2IN4_WriteData_Byte(0x0A);
-	LCD_2IN4_WriteData_Byte(0x13);
-	LCD_2IN4_WriteData_Byte(0x06);
-	LCD_2IN4_WriteData_Byte(0x30);
-	LCD_2IN4_WriteData_Byte(0x38);
-	LCD_2IN4_WriteData_Byte(0x0F);
-	LCD_2IN4_Write_Command(0x29); //Display on
+	LCD_2IN4_WriteData_Byte(0x00);
+	LCD_2IN4_WriteData_Byte(0x00);
+
+	LCD_2IN4_Write_Command(0xfd);
+	LCD_2IN4_WriteData_Byte(0xfa);
+	LCD_2IN4_WriteData_Byte(0xfc);
+
+	LCD_2IN4_Write_Command(0x3a);
+	LCD_2IN4_WriteData_Byte(0x05);
+
+	LCD_2IN4_Write_Command(0x35);
+	LCD_2IN4_WriteData_Byte(0x00);
+
+	LCD_2IN4_Write_Command(0x36);
+	LCD_2IN4_WriteData_Byte(0x08);
+
+
+	LCD_2IN4_Write_Command(0x21); 
+
+	LCD_2IN4_Write_Command(0x11);
+	DEV_Delay_ms(200);
+	LCD_2IN4_Write_Command(0x29);
+	DEV_Delay_ms(10);
+	// LCD_2IN4_Write_Command(0x11); //Sleep out
+	
+	// LCD_2IN4_Write_Command(0xCF);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0xC1);
+	// LCD_2IN4_WriteData_Byte(0X30);
+	// LCD_2IN4_Write_Command(0xED);
+	// LCD_2IN4_WriteData_Byte(0x64);
+	// LCD_2IN4_WriteData_Byte(0x03);
+	// LCD_2IN4_WriteData_Byte(0X12);
+	// LCD_2IN4_WriteData_Byte(0X81);
+	// LCD_2IN4_Write_Command(0xE8);
+	// LCD_2IN4_WriteData_Byte(0x85);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0x79);
+	// LCD_2IN4_Write_Command(0xCB);
+	// LCD_2IN4_WriteData_Byte(0x39);
+	// LCD_2IN4_WriteData_Byte(0x2C);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0x34);
+	// LCD_2IN4_WriteData_Byte(0x02);
+	// LCD_2IN4_Write_Command(0xF7);
+	// LCD_2IN4_WriteData_Byte(0x20);
+	// LCD_2IN4_Write_Command(0xEA);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_Write_Command(0xC0); //Power control
+	// LCD_2IN4_WriteData_Byte(0x1D); //VRH[5:0]
+	// LCD_2IN4_Write_Command(0xC1); //Power control
+	// LCD_2IN4_WriteData_Byte(0x12); //SAP[2:0];BT[3:0]
+	// LCD_2IN4_Write_Command(0xC5); //VCM control
+	// LCD_2IN4_WriteData_Byte(0x33);
+	// LCD_2IN4_WriteData_Byte(0x3F);
+	// LCD_2IN4_Write_Command(0xC7); //VCM control
+	// LCD_2IN4_WriteData_Byte(0x92);
+	// LCD_2IN4_Write_Command(0x3A); // Memory Access Control
+	// LCD_2IN4_WriteData_Byte(0x55);
+	// LCD_2IN4_Write_Command(0x36); // Memory Access Control
+	// LCD_2IN4_WriteData_Byte(0b1011000); // 0x58
+	// // SPILCD_setRotation(0);
+	// // SPILCD_invertDisplay(0);
+	// LCD_2IN4_Write_Command(0xB1);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0x12);
+	// LCD_2IN4_Write_Command(0xB6); // Display Function Control
+	// LCD_2IN4_WriteData_Byte(0x0A);
+	// LCD_2IN4_WriteData_Byte(0xA2);
+
+	// LCD_2IN4_Write_Command(0x44);
+	// LCD_2IN4_WriteData_Byte(0x02);
+
+	// LCD_2IN4_Write_Command(0xF2); // 3Gamma Function Disable
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_Write_Command(0x26); //Gamma curve selected
+	// LCD_2IN4_WriteData_Byte(0x01);
+	// LCD_2IN4_Write_Command(0xE0); //Set Gamma
+	// LCD_2IN4_WriteData_Byte(0x0F);
+	// LCD_2IN4_WriteData_Byte(0x22);
+	// LCD_2IN4_WriteData_Byte(0x1C);
+	// LCD_2IN4_WriteData_Byte(0x1B);
+	// LCD_2IN4_WriteData_Byte(0x08);
+	// LCD_2IN4_WriteData_Byte(0x0F);
+	// LCD_2IN4_WriteData_Byte(0x48);
+	// LCD_2IN4_WriteData_Byte(0xB8);
+	// LCD_2IN4_WriteData_Byte(0x34);
+	// LCD_2IN4_WriteData_Byte(0x05);
+	// LCD_2IN4_WriteData_Byte(0x0C);
+	// LCD_2IN4_WriteData_Byte(0x09);
+	// LCD_2IN4_WriteData_Byte(0x0F);
+	// LCD_2IN4_WriteData_Byte(0x07);
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_Write_Command(0XE1); //Set Gamma
+	// LCD_2IN4_WriteData_Byte(0x00);
+	// LCD_2IN4_WriteData_Byte(0x23);
+	// LCD_2IN4_WriteData_Byte(0x24);
+	// LCD_2IN4_WriteData_Byte(0x07);
+	// LCD_2IN4_WriteData_Byte(0x10);
+	// LCD_2IN4_WriteData_Byte(0x07);
+	// LCD_2IN4_WriteData_Byte(0x38);
+	// LCD_2IN4_WriteData_Byte(0x47);
+	// LCD_2IN4_WriteData_Byte(0x4B);
+	// LCD_2IN4_WriteData_Byte(0x0A);
+	// LCD_2IN4_WriteData_Byte(0x13);
+	// LCD_2IN4_WriteData_Byte(0x06);
+	// LCD_2IN4_WriteData_Byte(0x30);
+	// LCD_2IN4_WriteData_Byte(0x38);
+	// LCD_2IN4_WriteData_Byte(0x0F);
+	// LCD_2IN4_Write_Command(0x29); //Display on
 
 }
 
